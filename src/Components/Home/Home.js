@@ -15,7 +15,7 @@ function Home() {
 
                 <div className="home__row"> {/*2 rows*/}
                     <Product title='Free Agent Lifestyle' image={"https://m.media-amazon.com/images/I/41ZixpeNaiL.jpg"} price={12.99} rating={5}/>
-                    <Product title="Passnag Lightsaber with 3 Mode Sound, Force FX Heavy Dueling, Real RGB 12 Colors Changeable Light Saber with Blaster Sound, Metal Hilt with 1' Blade--Black SN227B" image={"https://m.media-amazon.com/images/I/51JC+pOQDmL._AC_UL320_.jpg"} price={99.99} rating={4} />
+                    <Product title="Passnag Lightsaber with 3 Mode Sound, Force FX Heavy Dueling, Real RGB 12 Colors Changeable Light Saber with Blaster Sound" image={"https://m.media-amazon.com/images/I/51JC+pOQDmL._AC_UL320_.jpg"} price={99.99} rating={4} />
                 </div>
 
                 <div className="home__row"> {/*3 rows*/}
