@@ -1,11 +1,37 @@
 import React, {useState} from 'react';
 import './Login.css';
-import {Link, useHistory} from 'react-router-dom';
-import {auth} from './firebase'
+import {Link, useNavigate as useHistory} from 'react-router-dom';
+import {auth} from '../../firebase'
 
 function Login() {
+    const history = useHistory();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    const signIn = (e) => {
+        e.preventDefault();
+
+        auth
+            .signInWithEmailAndPassword(email, password)
+            .then(auth => {
+                history.push('/')
+            })
+            .catch(error => alert(error.message));
+    }
+
+    const register = e => {
+        e.preventDefault();
+
+        auth
+            .createUserWithEmailAndPassword(email, password)
+            .then((auth)=> {
+                //if successful, it will create a new user with email and password
+                if(auth){
+                    history.push('/')
+                }
+            })
+            .catch(error => alert(error.message))
+    }
 
     return (
         <div className="login">
@@ -33,6 +59,7 @@ function Login() {
                     By signing-in you agree to the AMAZON-Tforddev Conditions of Use & Sale. Please
                     see our Privacy Notice, our Cookies Notice and our Interest-Based Ads Notice.
                 </p>
+
                 <button className="login__registerButton">Create your Amazon Account</button>
             </div>
         </div>
