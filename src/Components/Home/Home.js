@@ -10,7 +10,7 @@ function Home() {
                     className="home__image"
                     /*src="https://images-eu.ssl-images-amazon.com/images/G/02/digital/video/merch2016/Hero/Covid19/Generic/GWBleedingHero_ENG_COVIDUPDATE__XSite_1500x600_PV_en-GB._CB428684220_.jpg" */
                     src="https://m.media-amazon.com/images/I/61dF-1nlx3L._SX3000_.jpg"
-                    alt="home image"  
+                    alt="home banner"  
                 />
 
                 <div className="home__row"> {/*2 rows*/}
