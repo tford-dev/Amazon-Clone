@@ -5,6 +5,7 @@ import Header from './Components/Header/Header';
 import Home from './Components/Home/Home';
 import Checkout from './Components/Checkout/Checkout';
 import Login from './Components/Login/Login';
+import { useStateValue } from "./StateProvider";
 import { auth } from './firebase';
 
 function App() {
@@ -13,19 +14,19 @@ function App() {
 		auth.onAuthStateChanged((authUser)=> {
 			console.log("THE USER IS >>>", authUser);
 
-			if(authUser){
-				//the user just logged in / the user was logged in 
-				dispatch({
-					type: "SET_USER",
-					user: authUser,
-				})
-			} else {
-				//the user is logged out
-				dispatch({
-					type: "SET_USER",
-					user: null,
-				})
-			}
+			// if(authUser){
+			// 	//the user just logged in / the user was logged in 
+			// 	dispatch({
+			// 		type: "SET_USER",
+			// 		user: authUser,
+			// 	})
+			// } else {
+			// 	//the user is logged out
+			// 	dispatch({
+			// 		type: "SET_USER",
+			// 		user: null,
+			// 	})
+			// }
 		})
 	}, []);
 	
