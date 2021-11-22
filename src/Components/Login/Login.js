@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import './Login.css';
-import {Link, useNavigate as useHistory} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import {auth} from '../../firebase'
 
 function Login() {
-    const history = useHistory();
+    const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -14,7 +14,8 @@ function Login() {
         auth
             .signInWithEmailAndPassword(email, password)
             .then(auth => {
-                history.push('/')
+                navigate('/');
+                console.log(auth);
             })
             .catch(error => alert(error.message));
     }
@@ -27,7 +28,8 @@ function Login() {
             .then((auth)=> {
                 //if successful, it will create a new user with email and password
                 if(auth){
-                    history.push('/')
+                    navigate('/');
+                    console.log(auth);
                 }
             })
             .catch(error => alert(error.message))
@@ -52,15 +54,15 @@ function Login() {
                     <h5>Password</h5>
                     <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
 
-                    <button type="submit" className="login__signInButton">Sign In</button>
+                    <button type="submit" onClick={signIn} className="login__signInButton">Sign In</button>
                 </form>
 
                 <p>
-                    By signing-in you agree to the AMAZON-Tforddev Conditions of Use & Sale. Please
+                    By signing-in you agree to the AMAZON-tforddev Conditions of Use & Sale. Please
                     see our Privacy Notice, our Cookies Notice and our Interest-Based Ads Notice.
                 </p>
 
-                <button className="login__registerButton">Create your Amazon Account</button>
+                <button onClick={register} className="login__registerButton">Create your Amazon Account</button>
             </div>
         </div>
     )

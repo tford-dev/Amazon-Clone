@@ -29,12 +29,14 @@
     padding: 10px;
     border: none;
     width: 100%;
+    border-radius: 7px 0px 0px 7px;
 }
 
 .header__searchIcon {
     padding: 5px;
     height: 22px !important;
     background-color: #cd9042;
+    border-radius: 0px 7px 7px 0px;
 }
 
 /*Nav options*/
@@ -53,11 +55,13 @@
 
 .header__optionLineOne {
     font-size: 10px;
+    text-decoration: none;
 }
 
 .header__optionLineTwo {
     font-size: 13px;
     font-weight: 800;
+    text-decoration: none;
 }
 
 .header__optionBasket {
@@ -69,4 +73,11 @@
 .header__basketCount {
     margin-right: 10px;
     margin-left: 10px;
+}
+
+/*Psuedo classes*/
+.header__logo:hover, .header__option:hover {
+    outline: 1px solid #fff;
+    padding-top: 3px;
+    padding-bottom: 3px;
 }

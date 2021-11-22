@@ -16,7 +16,7 @@ export default function CheckoutProduct({id, title, image, price, rating, hideBu
 
     return (
         <div className="checkoutProduct">
-            <img className="checkoutProduct__image" srcc={image} />
+            <img className="checkoutProduct__image" src={image} />
 
             <div className="checkoutProduct__info">
                 <p className="checkoutProduct__title">{title}</p>

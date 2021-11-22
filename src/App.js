@@ -9,24 +9,26 @@ import { useStateValue } from "./StateProvider";
 import { auth } from './firebase';
 
 function App() {
+	const [{}, dispatch] = useStateValue();
+
 	useEffect(()=> {
 		//use effect will only run once the app loads
 		auth.onAuthStateChanged((authUser)=> {
 			console.log("THE USER IS >>>", authUser);
 
-			// if(authUser){
-			// 	//the user just logged in / the user was logged in 
-			// 	dispatch({
-			// 		type: "SET_USER",
-			// 		user: authUser,
-			// 	})
-			// } else {
-			// 	//the user is logged out
-			// 	dispatch({
-			// 		type: "SET_USER",
-			// 		user: null,
-			// 	})
-			// }
+			if(authUser){
+				//the user just logged in / the user was logged in 
+				dispatch({
+					type: "SET_USER",
+					user: authUser,
+				})
+			} else {
+				//the user is logged out
+				dispatch({
+					type: "SET_USER",
+					user: null,
+				})
+			}
 		})
 	}, []);
 	
