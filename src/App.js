@@ -1,3 +1,4 @@
+/* eslint-disable */ 
 import React, {useEffect} from 'react'
 import './App.css';
 import {BrowserRouter as Router, Route, Routes as Switch} from "react-router-dom";

@@ -1,7 +1,7 @@
+/* eslint-disable */ 
 import React from 'react';
 import './CheckoutProduct.css';
 import {useStateValue} from '../../StateProvider';
-
 
 export default function CheckoutProduct({id, title, image, price, rating, hideButton}) {
     const [{basket}, dispatch] = useStateValue();
