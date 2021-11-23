@@ -1,3 +1,4 @@
+/* eslint-disable */ 
 import React, {useState, useEffect} from 'react';
 import './Payment.css';
 import {useStateValue} from '../../StateProvider';
@@ -19,7 +20,7 @@ const Payment = () => {
                         <Link to='/checkout'>{basket?.length} items</Link>
                     )
                 </h1>
-                
+
                 {/*Payment section - delivery address*/}
                 <div className='payment__section'>
                     <div className='payment__title'>
