@@ -16,6 +16,14 @@ function Header() {
         }
     }
 
+    const searchFocus = (e) => {
+        e.target.style.border = "3px solid #cd9042";
+    }
+
+    const searchUnFocus = (e) => {
+        e.target.style.border = "";
+    }
+
     return (
         <div className='header'>
             <Link to="/">
@@ -28,8 +36,10 @@ function Header() {
             <div className='header__search'>
                 <input
                     className='header__searchInput' type='text'
+                    onMouseOver={searchFocus} onMouseLeave={searchUnFocus}
                 />
-                <SearchIcon className="header__searchIcon" />
+                <SearchIcon className="header__searchIcon" 
+                onMouseOver={searchFocus} onMouseLeave={searchUnFocus}/>
             </div>
 
             <div className="header__nav">

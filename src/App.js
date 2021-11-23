@@ -6,7 +6,7 @@ import Header from './Components/Header/Header';
 import Home from './Components/Home/Home';
 import Checkout from './Components/Checkout/Checkout';
 import Login from './Components/Login/Login';
-import Order from './Components/Order/Orders';
+import Orders from './Components/Order/Orders';
 import { useStateValue } from "./StateProvider";
 import { auth } from './firebase';
 
