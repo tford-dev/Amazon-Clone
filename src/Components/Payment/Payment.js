@@ -12,7 +12,7 @@ import axios from '../../axios';
 
 const Payment = () => {
     const [{basket, user}, dispatch] = useStateValue();
-    const navigate = useNavigate;
+    const navigate = useNavigate();
     
     const stripe = useStripe();
     const elements = useElements();
@@ -37,6 +37,8 @@ const Payment = () => {
         getClientSecret();
     }, [basket])
 
+    console.log(clientSecret);
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         setProcessing(true);
@@ -47,10 +49,26 @@ const Payment = () => {
             }
         }).then(({paymentIntent}) => {
             //paymentIntent = payment confirmation
+            db
+                .collection('users')
+                .doc(user?.uid)
+                .collection('orders')
+                .doc(paymentIntent.id)
+                .set({
+                    basket: basket,
+                    amount: paymentIntent.amount,
+                    created: paymentIntent.created
+                })
+            
             setSucceeded(true);
             setError(null);
             setProcessing(false);
-            navigate("../orders", { replace: true });
+
+            dispatch({
+                type: 'EMPTY_BASKET'
+            })
+
+            navigate("/orders", { replace: true });
         })
     }
 
@@ -90,6 +108,7 @@ const Payment = () => {
                     <div className='payment__items'>
                         {basket.map(item => (
                             <CheckoutProduct 
+                                key={item.id}
                                 id={item.id}
                                 title={item.title}
                                 image={item.image}
