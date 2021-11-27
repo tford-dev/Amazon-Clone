@@ -55,7 +55,6 @@ const Payment = () => {
                 .collection('orders')
                 .doc(paymentIntent.id)
                 .set({
-                    basket: basket,
                     amount: paymentIntent.amount,
                     created: paymentIntent.created
                 })
@@ -108,7 +107,6 @@ const Payment = () => {
                     <div className='payment__items'>
                         {basket.map(item => (
                             <CheckoutProduct 
-                                key={item.id}
                                 id={item.id}
                                 title={item.title}
                                 image={item.image}
