@@ -8,11 +8,14 @@ function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
+    //Function to sign in user
     const signIn = (e) => {
         e.preventDefault();
 
         auth
+            //firebase method to sign in user
             .signInWithEmailAndPassword(email, password)
+            //logic below only executes if there is an authenticated user
             .then(auth => {
                 navigate('/');
                 console.log(auth);
@@ -24,6 +27,7 @@ function Login() {
         e.preventDefault();
 
         auth
+            //firebase method to log in user
             .createUserWithEmailAndPassword(email, password)
             .then((auth)=> {
                 //if successful, it will create a new user with email and password

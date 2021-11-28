@@ -13,16 +13,19 @@ import { auth } from './firebase';
 import {loadStripe} from '@stripe/stripe-js';
 import {Elements} from '@stripe/react-stripe-js';
 
+//Stripe auth token for testing
 const promise = loadStripe('pk_test_51Jz2AaJB4ICtgxxcX846DpbJAOSxlICI7qquEssStztGUWl80uQPlYb0cPSYvWKgZYo4V47k3VMq6IaKrchvu1ZQ00Mjf3bEiV');
 
 function App() {
 	const [{}, dispatch] = useStateValue();
 
 	useEffect(()=> {
-		//use effect will only run once the app loads
+		//useEffect will only run once the app loads, this hook is here to set the authenticated user
+
+		//Logs the authenticated user to the console if authState is changed
 		auth.onAuthStateChanged((authUser)=> {
 			console.log("THE USER IS >>>", authUser);
-
+			
 			if(authUser){
 				//the user just logged in / the user was logged in 
 				dispatch({
@@ -40,7 +43,6 @@ function App() {
 	}, []);
 	
 	return (
-		//BEM
 		<div className="App">
 			<Router>
 			<Header />

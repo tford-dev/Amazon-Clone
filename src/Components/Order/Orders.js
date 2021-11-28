@@ -9,6 +9,7 @@ const Orders = () => {
     const [{basket, user}, dispatch] = useStateValue();
     const [orders, setOrders] = useState([]);
 
+    //useEffect hook to display baskets from orders made by authenticated user that are in database
     useEffect(()=>{
         if(user){
             db
@@ -32,6 +33,7 @@ const Orders = () => {
             <h1>Your Orders</h1>
 
             <div className='orders__order'>
+                {/*If the user has orders, they are mapped and displayed in component*/}
                 {orders?.map(order=>(
                     <Order order={order} />
                 ))}

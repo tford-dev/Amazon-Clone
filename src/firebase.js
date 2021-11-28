@@ -1,12 +1,9 @@
-// Import the functions you need from the SDKs you need
+//Imports of functions from SDK in Firebase
 import firebase from "firebase/compat/app"
 import "firebase/compat/auth"
 import "firebase/compat/firestore"
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// Firebase configuration 
 const firebaseConfig = {
   apiKey: "AIzaSyAneJiGWIUraTmwNmbprssYeW1p4a0DicM",
   authDomain: "clone-18b36.firebaseapp.com",

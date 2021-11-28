@@ -10,12 +10,14 @@ import {auth} from "../../firebase";
 function Header() {
     const [{basket, user}, dispatch] = useStateValue();
 
+    //Method to sign user out 
     const handleAuthentication = () => {
         if(user){
             auth.signOut();
         }
     }
 
+    //The next 2 methods are simple event listeners for cosmetics
     const searchFocus = (e) => {
         e.target.style.border = "3px solid #cd9042";
     }
@@ -45,7 +47,9 @@ function Header() {
             <div className="header__nav">
                 <Link to={!user && '/login'} className="header__link">
                     <div onClick={handleAuthentication} className="header__option">
+                        {/*If there is an authenticated user, It will display their email*/}
                         <span className="header__optionLineOne">Hello {!user ? 'Guest' : user.email}</span>
+                        {/*If there is an authenticated user, text will display sign out*/}
                         <span className="header__optionLineTwo">{user ? 'Sign Out' : 'Sign In'}</span>
                     </div>
                 </Link>
@@ -65,6 +69,7 @@ function Header() {
                 <Link to="/checkout" className="header__link">
                     <div className="header__optionBasket">
                         <ShoppingBasketIcon />
+                        {/*If there are items in the basket, the length will display*/}
                         <span className="header__optionLineTwo header__basketCount">
                             {basket?.length}
                         </span>

@@ -18,7 +18,8 @@ function Checkout() {
                 />
 
                 <div>
-                    <h3>Hello {", ", user?.email}</h3>
+                    {/*If there is an authenticated user, their email is displayed*/}
+                    <h3>Hello {!user ? 'Guest' : user.email}</h3>
                     <h2 className="checkout__title">Your shopping basket</h2>
 
                     {basket.map(item => (

@@ -14,9 +14,11 @@ const Payment = () => {
     const [{basket, user}, dispatch] = useStateValue();
     const navigate = useNavigate();
     
+    //Declares features from Stripe API
     const stripe = useStripe();
     const elements = useElements();
 
+    //state for payment processing in Stripe
     const [succeeded, setSucceeded] = useState(false);
     const [processing, setProcessing] = useState("");
     const [error, setError] = useState(null);
@@ -48,6 +50,7 @@ const Payment = () => {
                 card: elements.getElement(CardElement)
             }
         }).then(({paymentIntent}) => {
+            //Promise to add order information to firebase database
             //paymentIntent = payment confirmation
             db
                 .collection('users')
@@ -63,11 +66,13 @@ const Payment = () => {
             setSucceeded(true);
             setError(null);
             setProcessing(false);
-
+             
+            //Empty basket after the purchase is made
             dispatch({
                 type: 'EMPTY_BASKET'
             })
 
+            //Redirects user to '/orders' route to see the summary of their purchase
             navigate("/orders", { replace: true });
         })
     }
@@ -94,6 +99,7 @@ const Payment = () => {
                         <h3>Delivery Address</h3>
                     </div>
                     <div className='payment__address'>
+                        {/*If a user is signed in, their email is displayed*/}
                         <p>{user?.email}</p>
                         <p>123 React Lane</p>
                         <p>Los Angeles, CA</p>
@@ -106,6 +112,7 @@ const Payment = () => {
                         <h3>Review items and delivery</h3>                       
                     </div>
                     <div className='payment__items'>
+                        {/*Maps through basket to show items*/}
                         {basket.map(item => (
                             <CheckoutProduct 
                                 id={item.id}
@@ -140,6 +147,8 @@ const Payment = () => {
                                 />
 
                                 <button disabled={processing || disabled || succeeded}>
+                                    {/*Ternary operator in span to show whether they can 
+                                    purchase an order or if it processing*/}
                                     <span>{processing ? <p>Processing</p> : "Buy Now"}</span>
                                 </button>
                             </div>

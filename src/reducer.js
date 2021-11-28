@@ -1,15 +1,22 @@
+//Throughout this file, the shopping cart is referred to as basket
 export const initialState = {
+	/*basket key is an empty array for any products that get added to the cart.
+	basket key values will be passed in through product component and then potentially
+	the checkout, payment, and orders component
+	*/
 	basket: [],
 	user: null
 };
 
-// Selector
+//Function to get total price of items in basket
 export const getBasketTotal = (basket) => 
     basket?.reduce((amount, item) => item.price + amount, 0);
 
+//reducer function that has conditional switch-case statements for the basket
 const reducer = (state, action) => {
     console.log(action);
     switch (action.type) {
+		//Next 3 switch cases is logic for managing basket
 		case "ADD_TO_BASKET":
 			return {
 				...state,
@@ -40,6 +47,7 @@ const reducer = (state, action) => {
 				basket: newBasket
 			}
 
+			//Sets authenticated user in state
 			case "SET_USER":
 				return {
 					...state,

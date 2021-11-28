@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import reducer, { initialState } from "./reducer";
 import { StateProvider } from "./StateProvider";;
 
+//Wraps App component in context api using hooks
 ReactDOM.render(
   	<React.StrictMode>
 		<StateProvider initialState={initialState} reducer={reducer}>

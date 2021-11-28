@@ -4,10 +4,12 @@ import moment from 'moment';
 import CheckoutProduct from '../Checkout/CheckoutProduct';
 import CurrencyFormat from 'react-currency-format';
 
+//Information from database is used as a prop for component
 const Order = ({order}) => {
     return (
         <div className="order">
             <h2>Order</h2>
+            {/*moment.js used to format date order was made by authenticated user*/}
             <p>{moment.unix(order.data.created).format('MMMM Do YYYY, h:mma')}</p>
             <p className="order__id">
                 <small>{order.id}</small>

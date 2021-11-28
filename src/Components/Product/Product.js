@@ -7,7 +7,7 @@ function Product({id, title, image, price, rating}) {
     const [{basket}, dispatch] = useStateValue();
 
     const addToBasket = () => {
-        //dispatch the item into the data layer
+        //uses dispatch method to add item to basket 
         dispatch({
             type: "ADD_TO_BASKET",
             item: {
@@ -30,6 +30,7 @@ function Product({id, title, image, price, rating}) {
                 </p>
 
                 <div className="product__rating">
+                    {/*Anon function to display stars*/}
                     {Array(rating).fill().map((_, i) => (
                         <p>⭐</p>
                     ))}
