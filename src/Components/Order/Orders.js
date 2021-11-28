@@ -4,6 +4,7 @@ import { db } from '../../firebase';
 import './Orders.css';
 import {useStateValue} from '../../StateProvider';
 import Order from './Order';
+import {Navigate} from 'react-router-dom';
 
 const Orders = () => {
     const [{basket, user}, dispatch] = useStateValue();
@@ -29,16 +30,20 @@ const Orders = () => {
     }, [user])
 
     return (
-        <div className='orders'>
-            <h1>Your Orders</h1>
+        user ? (
+            <div className='orders'>
+                <h1>Your Orders</h1>
 
-            <div className='orders__order'>
-                {/*If the user has orders, they are mapped and displayed in component*/}
-                {orders?.map(order=>(
-                    <Order order={order} />
-                ))}
+                <div className='orders__order'>
+                    {/*If the user has orders, they are mapped and displayed in component*/}
+                    {orders?.map(order=>(
+                        <Order order={order} />
+                    ))}
+                </div>
             </div>
-        </div>
+        )   :   (
+            <Navigate replace to="/login" />
+        )
     )
 }
 
