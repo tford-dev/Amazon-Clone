@@ -6,17 +6,12 @@
     "source": "functions"
   },
   "hosting": {
+    "site": "amz-clone-tford-dev",
     "public": "build",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
-    ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
     ]
   }
 }

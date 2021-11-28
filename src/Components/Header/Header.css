@@ -76,6 +76,10 @@
     margin-left: 10px;
 }
 
+.header__link {
+    text-decoration: none;
+}
+
 /*Psuedo classes*/
 .header__logo:hover, .header__option:hover {
     outline: 1px solid #fff;
