@@ -14,18 +14,18 @@ function Home() {
                 />
 
                 <div className="home__row"> {/*2 rows*/}
-                    <Product id={10} title='Free Agent Lifestyle' image={"https://m.media-amazon.com/images/I/41ZixpeNaiL.jpg"} price={12.99} rating={5}/>
-                    <Product id={11} title="Passnag Lightsaber with 3 Mode Sound, Force FX Heavy Dueling, Real RGB 12 Colors Changeable Light Saber with Blaster Sound" image={"https://m.media-amazon.com/images/I/51JC+pOQDmL._AC_UL320_.jpg"} price={99.99} rating={4} />
+                    <Product id={10} title='Apple iPhone 12 Pro Max (256GB, Graphite)' image={"https://m.media-amazon.com/images/I/71XXJC7V8tL._FMwebp__.jpg"} price={1198.99} rating={4}/>
+                    <Product id={11} title='Apple iPhone 13 (512GB, Blue)' image={"https://m.media-amazon.com/images/I/71xb2xkN5qL._FMwebp__.jpg"} price={1128.99} rating={4} />
                 </div>
 
                 <div className="home__row"> {/*3 rows*/}
-                    <Product id={12} title="Men's Yeezy Boost 350 V2 Yechiel" image={"https://m.media-amazon.com/images/I/715pEC69DZL._AC_UL320_.jpg"} price={350} rating={4} />
-                    <Product id={13} title="Men's Yeezy Boost 350 V2 Sand Taupe" image={"https://m.media-amazon.com/images/I/71nErAL6TtL._AC_UL320_.jpg"} price={350} rating={3} />
-                    <Product id={14} title="Men's Yeezy Boost 700 Wave Runner" image={"https://m.media-amazon.com/images/I/51Nz4A11nbL._AC_UL320_.jpg"} price={700} rating={5} />
+                    <Product id={12} title="Apple Leather Case with MagSafe (for iPhone 13 Pro Max) - Sequoia Green" image={"https://m.media-amazon.com/images/I/81klsR82-BL._AC_SL1500_.jpg"} price={58.99} rating={4} />
+                    <Product id={13} title="OTTERBOX DEFENDER SERIES XT SCREENLESS EDITION Case for iPhone 13 Pro Max" image={"https://m.media-amazon.com/images/I/61c63HtIxYL._AC_SL1500_.jpg"} price={69.95} rating={5} />
+                    <Product id={14} title="Spigen Silicone Fit Designed for iPhone 13 Pro Max Case" image={"https://m.media-amazon.com/images/I/61A97CDlLAL._AC_SL1500_.jpg"} price={16.99} rating={3} />
                 </div>
 
                 <div className="home__row"> {/*1 row*/}
-                    <Product id={15} title="Alienware m15 R4 Gaming Laptop, 15.6 inch Full HD (FHD) - Intel Core i7-10870H, 16GB DDR4 RAM, 512GB SSD, NVIDIA GeForce RTX 3060 6GB GDDR6, Windows 10 Home - Lunar Light (Latest Model)" image={"https://m.media-amazon.com/images/I/71Jp27bTQoL._AC_UY218_.jpg"} price={1899.99} rating={4} />
+                    <Product id={15} title="2021 Apple MacBook Pro (16-inch, Apple M1 Pro chip with 10‑core CPU and 16‑core GPU, 16GB RAM, 512GB SSD) - Space Gray" image={"https://m.media-amazon.com/images/I/61aUBxqc5PL._AC_SL1500_.jpg"} price={2398.99} rating={4} />
                 </div>
             </div>
         </div>
